@@ -9,10 +9,10 @@ import Foundation
 
 struct NewsServices {
     
-    func fetchNews(_ url: URL, completion: @escaping ([Article]) -> ()) {
+    func fetchNews(_ url: URL, completion: @escaping ([Article]?) -> ()) {
         URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
-                print("Something went wrong.")
+                print(error)
             } else if let  data = data {
                 
                 let articles = try? JSONDecoder().decode(Articles.self, from: data)
