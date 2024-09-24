@@ -8,10 +8,10 @@
 import Foundation
 
 struct Articles: Decodable {
-    var articles: [Articles]
+    var articles: [Article]
 }
 
 struct Article: Decodable {
-    var title: String
-    var description: String
+    var title: String?
+    var description: String?
 }

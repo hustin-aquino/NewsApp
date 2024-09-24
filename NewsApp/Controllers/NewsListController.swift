@@ -11,6 +11,11 @@ class NewsListController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setup()
+    }
+    
+    private func setup() {
+        self.navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     
