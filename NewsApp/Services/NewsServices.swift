@@ -18,7 +18,13 @@ struct NewsServices {
                 let articles = try? JSONDecoder().decode(Articles.self, from: data)
                 
                 if let articles = articles {
-                    completion(articles.articles)
+                    completion(articles.articles.filter({ article in
+                        if article.title != "[Removed]" {
+                            return true
+                        }
+                        
+                        return false
+                    }))
                 }
                 
                 print(articles?.articles)
